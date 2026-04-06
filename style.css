@@ -44,3 +44,40 @@ header {
   font-weight: bold;
   margin: 10px 0;
 }
+#search-input {
+  padding: 10px;
+  width: 300px;
+  margin: 20px auto;
+  display: block;
+}
+.no-results {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: 2rem;
+  font-weight: bold;
+}
+
+.project-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 2rem;
+}
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+
+  display: flex;              /* makes items horizontal */
+  justify-content: center;    /* center them */
+  gap: 20px;                  /* space between items */
+}
+
+nav li {
+  margin: 0;                  /* remove vertical spacing */
+}
+
+nav a {
+  text-decoration: none;
+  font-size: 1.1rem;
+}

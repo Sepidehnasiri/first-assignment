@@ -30,9 +30,13 @@ const projects = [
 ];
 
 const projectContainer = document.getElementById("project-container");
-
 function renderProjects(projectList) {
   projectContainer.innerHTML = "";
+
+  if (projectList.length === 0) {
+    projectContainer.innerHTML = `<p class="no-results">No projects found</p>`;
+    return;
+  }
 
   projectList.forEach((project) => {
     const card = document.createElement("div");
@@ -56,7 +60,7 @@ renderProjects(projects);
 
 const searchInput = document.getElementById("search-input");
 searchInput.addEventListener("input", function () {
-  const searchValue = searchInput.value.toLowerCase();
+  const searchValue = searchInput.value.toLowerCase().trim();
 
   const filteredProjects = projects.filter((project) => {
     return (
