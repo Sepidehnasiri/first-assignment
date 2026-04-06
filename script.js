@@ -53,3 +53,18 @@ function renderProjects(projectList) {
 }
 
 renderProjects(projects);
+
+const searchInput = document.getElementById("search-input");
+searchInput.addEventListener("input", function () {
+  const searchValue = searchInput.value.toLowerCase();
+
+  const filteredProjects = projects.filter((project) => {
+    return (
+      project.title.toLowerCase().includes(searchValue) ||
+      project.description.toLowerCase().includes(searchValue) ||
+      project.category.toLowerCase().includes(searchValue)
+    );
+  });
+
+  renderProjects(filteredProjects);
+});
