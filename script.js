@@ -1,33 +1,14 @@
-const projects = [
-  {
-    title: "Portfolio Website",
-    description: "A personal portfolio built with HTML and CSS.",
-    category: "Web Design",
-    imageURL: "./img/project-1.jpg",
-    link: "#"
-  },
-  {
-    title: "Weather App",
-    description: "A weather application using JavaScript and an API.",
-    category: "JavaScript",
-    imageURL: "./img/project-2.jpg",
-    link: "#"
-  },
-  {
-    title: "Task Manager",
-    description: "A simple task manager to organize daily work.",
-    category: "Productivity",
-    imageURL: "./img/project-3.jpg",
-    link: "#"
-  },
-{
-    title: "Job Hunt Tracker",
-    description: "A job hunting tracker to manage applications and interviews.",
-    category: "Productivity",
-    imageURL: "./img/project-4.jpg",
-    link: "#"
-  }
-];
+let projects = [];
+
+fetch("https://raw.githubusercontent.com/Sepidehnasiri/first-assignment/main/projects.json")
+  .then((response) => response.json())
+  .then((data) => {
+    projects = data;
+    renderProjects(projects);
+  })
+  .catch((error) => {
+    console.error("Error loading JSON:", error);
+  });
 
 const projectContainer = document.getElementById("project-container");
 function renderProjects(projectList) {
