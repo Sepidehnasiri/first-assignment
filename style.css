@@ -13,13 +13,6 @@ header {
   padding: 20px;
 }
 
-.project-card {
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  overflow: hidden;
-  background-color: #fff;
-}
-
 .project-image {
   width: 100%;
   height: 200px;
@@ -51,11 +44,21 @@ header {
   font-weight: bold;
 }
 
+.project-card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #fff;
+  width: 100%;
+  max-width: 300px;
+}
+
 .project-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 300px));
   gap: 20px;
   margin-top: 2rem;
+  justify-content: center;
 }
 nav ul {
   list-style: none;
